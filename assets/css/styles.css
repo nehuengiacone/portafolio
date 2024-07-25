@@ -1,0 +1,102 @@
+/*
+fuente: Inconsolata
+
++ weight: 
+	* extralight: 200
+	* light: 300
+	* regular: 400
+	* medium: 500
+	* semibold: 600
+	* extrabold: 800
+	* black: 900
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+* {
+	background-color: black;
+	font-family: "Inconsolata", "monospace";
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+h1{
+	text-align: center;
+	font-style: normal;
+	font-weight: 400;
+	color:white;
+	margin: 20px;
+}
+
+h3 {
+	font-style: normal;
+	font-weight: 400;
+	padding-left: 1%;
+	margin-top: 20px;
+}
+
+p{
+	margin-top: 20px;
+	font-size: 15pt;
+	font-style: normal;
+	font-weight: 400;
+}
+
+#consola {
+	width: 100vw;
+	height: 50vh;
+	background-color: black;
+	color: white;
+	border-radius: 10%;
+	padding-left: 1%;
+}
+
+#pipe {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20pt;
+	display: inline;
+}
+
+/*animación para el pipe*/
+.parpadeo {
+      animation: parpadeo 0.6s infinite alternate;
+    }
+
+    @keyframes parpadeo {
+      0% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+}
+
+input {
+	outline: 0 !important;
+	border: 0 !important;
+	border-style: none;
+}
+
+#comando {
+	display: inline;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15pt;
+	width: 90vw;
+	margin-top: 20px;
+}
+
+#comando:focus {
+	outline: 0 !important;
+	border: 0 !important;
+}
+
+#comando::placeholder {
+	color: white;
+}
+
+.error {
+	color: coral;
+} 
