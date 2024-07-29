@@ -13,7 +13,9 @@ fuente: Inconsolata
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
 
 * {
-	background-color: black;
+	/* background-color: black; */
+	/* background-color: #353535; */
+	background-color: #202124;
 	font-family: "Inconsolata", "monospace";
 	color: white;
 	margin: 0;
@@ -25,17 +27,19 @@ h1{
 	font-style: normal;
 	font-weight: 400;
 	color:white;
-	margin: 20px;
+	margin-top: 20px;
 }
 
 h3 {
 	font-style: normal;
 	font-weight: 400;
-	padding-left: 1%;
+	/* padding-left: 1%; */
 	margin-top: 20px;
+	margin-left: 1%;
+	margin-bottom: 20px;
 }
 
-p{
+#puntero, p{
 	margin-top: 20px;
 	font-size: 15pt;
 	font-style: normal;
@@ -43,12 +47,16 @@ p{
 }
 
 #consola {
-	width: 100vw;
-	height: 50vh;
-	background-color: black;
+	width: 90vw;
+	height: 70vh;
+	overflow: auto;
+	overflow-x: hidden;
+	/* background-color: black; */
+	/* background-color: #353535; */
+	background-color: #202124;
 	color: white;
-	border-radius: 10%;
-	padding-left: 1%;
+	/* padding-left: 1%; */
+	margin-left: 1%;
 }
 
 #pipe {
@@ -61,16 +69,15 @@ p{
 /*animación para el pipe*/
 .parpadeo {
       animation: parpadeo 0.6s infinite alternate;
-    }
+}    
 
-    @keyframes parpadeo {
-      0% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
+@keyframes parpadeo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 input {
@@ -80,11 +87,11 @@ input {
 }
 
 #comando {
-	display: inline;
+	display: inline-block;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 15pt;
-	width: 90vw;
+	width: 50vw;
 	margin-top: 20px;
 }
 

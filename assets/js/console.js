@@ -1,9 +1,14 @@
 //DOM
-/*const pipeTag = document.createElement('p');
-pipeTag.id= "pipe";*/
+// const pipeTag = document.createElement('p');
+// pipeTag.id= "pipe";
+// pipeTag.classList.add("parpadeo");
+// pipeTag.innerText = "|";
 const presentacion = document.querySelector('#presentacion');
 const consola = document.querySelector("#consola");
 const inputTag = document.createElement('input');
+const puntero = document.createElement("span");
+puntero.textContent = "/> ";
+puntero.id = "puntero";
 
 
 
@@ -22,6 +27,7 @@ const comandos = {
 		letrasAnimacion(msg, surprise);
 		consola.appendChild(surprise);
 		inputTag.value = "";
+		consola.appendChild(puntero);
 		consola.appendChild(inputTag);
 	},
 
@@ -32,6 +38,7 @@ const comandos = {
 		letrasAnimacion(msg, helpMsg);
 		consola.appendChild(helpMsg);
 		inputTag.value = "";
+		consola.appendChild(puntero);
 		consola.appendChild(inputTag);
 	},
 
@@ -46,6 +53,7 @@ const comandos = {
 			}
 		}
 		inputTag.value = "";
+		consola.appendChild(puntero);
 		consola.appendChild(inputTag);
 	},
 
@@ -58,7 +66,8 @@ const comandos = {
 		letrasAnimacion(msg, errorMsg);
 		errorMsg.classList.toggle("error");
 		consola.appendChild(errorMsg);
-		inputTag.value = "";
+		inputTag.value = ""	;
+		consola.appendChild(puntero);
 		consola.appendChild(inputTag);
 	}
 }
@@ -69,7 +78,7 @@ const setearPropInput = (tipo="hidden") => {
 	inputTag.id = "comando";
 	inputTag.type = tipo;
 	inputTag.autofocus = true;
-	inputTag.placeholder = "/> ";
+	inputTag.placeholder = "";
 	inputTag.type = "text";
 }
 
@@ -82,8 +91,9 @@ const letrasAnimacion = (mensaje, tagHTML) => {
         	/*document.querySelector("#consola").append(pipeTag);
 			pipeTag.innerText = "|";*/
 			setearPropInput();
-			consola.append(inputTag);
-
+			consola.appendChild(puntero);
+			consola.appendChild(inputTag);
+			inputTag.focus();
 			clearInterval(intervalo);
 		}
 		else{
@@ -93,7 +103,7 @@ const letrasAnimacion = (mensaje, tagHTML) => {
 			else{
 				tagHTML.innerHTML = tagHTML.innerHTML + mensaje.charAt(i);
 			}
-
+			tagHTML.scrollIntoView();
 		}
 		i++;
 	}, 10);	//50
@@ -115,7 +125,7 @@ inputTag.addEventListener("keypress", () => {
 		stackInput.push(inputTag.value);
 		inputUser.innerText = inputTag.value;
 		consola.appendChild(inputUser);
-		
+
 		if(inputTag.value === "surprise"){
 			comandos.surprise(msg);
 		}
@@ -128,13 +138,10 @@ inputTag.addEventListener("keypress", () => {
 		else{
 			comandos.errorMsg(msg);
 		}
+
+		inputTag.focus({preventScroll:false});
 	}
 });
-
-
-
-
-
 
 
 
@@ -180,7 +187,6 @@ inputTag.addEventListener("keydown", ()=>{
 		}
 	}
 });
-
 
 
 letrasAnimacion(mensaje_presentacion, presentacion);
