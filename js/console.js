@@ -40,6 +40,16 @@
         crearShellOutput(aboutText);
     }
 
+    const imprimirProjects = () => {
+        const projectsText = `Proyectos destacados:
+        <span class="palabra-destacada">- Portafolio Personal:</span> Un sitio web que muestra mis habilidades y proyectos.
+        <span class="palabra-destacada">- DolarArg:</span> Aplicación de escritorio para visualizar en tiempo real la cotización del dolar en Argentina. Proyecto realizado en C# y WPF.
+        <span class="palabra-destacada">- Gestor de Notas:</span> Una aplicación de escritorio para la gestión de notas. Proyecto realizado en Python y Tkinter.
+        <span class="palabra-destacada">- Oro Inicial:</span> Aplicación de escritorio para la organización de colecciones y armado de mazos de Mitos y Leyendas. Proyecto realizado en Visual FoxPro.
+        ¡Visita mi GitHub para ver más proyectos!`;
+        crearShellOutput(projectsText);
+    }
+
     const imprimirError = (input) => {
         const errorText = `Comando no reconocido: "${input}". Escribe "help" para ver los comandos disponibles.`;
         crearShellOutput(errorText);
