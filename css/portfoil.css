@@ -96,10 +96,16 @@ main {
 
 p {
     width: fit-content;
-    color: #00FF7F;
+    color: #00ff80;
     background-color: transparent;
     display: block;
     margin: 1%;
+}
+
+.palabra-destacada {
+    color: #c3005b;
+    font-weight: bold;
+    background-color: transparent;
 }
 
 .shell-input {
