@@ -1,0 +1,138 @@
+@font-face {
+    @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+    font-family: 'Inconsolata', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    background-color: #333; 
+    font: 15px 'Inconsolata', monospace;
+}
+
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, rgb(230, 178, 80), rgb(185, 185, 185));
+}   
+
+#shell-box {
+    width: 80%;
+    height: 80vh;
+    border: 5px solid #aeaeae;
+    background-color: black;
+    border-radius: 6px; 
+    overflow-y: auto;
+}
+
+#title-box {
+    width: 80%;
+    text-align: start;
+    border: 5px solid #aeaeae;
+    background-color: #aeaeae;
+    border-radius: 6px;
+    position: relative;
+    top: 2%;
+}
+
+#title-box h1, #red-point, #yellow-point, #green-point {
+    background-color: transparent;
+}
+
+#red-point {
+    color: #ff0000;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#yellow-point {
+    color: #f2ff00;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+#green-point {
+    color: #00FF7F;
+    font-weight: bold;
+    font-size: 25px; 
+}
+
+#shell-history {
+    width: 80%;
+    display: flex;
+    flex-flow: column wrap;
+    background-color: black;
+    margin-top: 3%;
+}
+
+.shell-input-box{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    background-color: transparent;
+}
+
+.shell-output {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: transparent;
+    /* margin-bottom: 1%; */
+}
+
+.shell-output-error {
+    display: flex;
+    flex-flow: column wrap;
+    background-color: transparent;
+    /* margin-bottom: 1%; */
+}
+.shell-output-error p {
+    color: #FF2E2E;
+}
+
+p {
+    width: fit-content;
+    color: #00FF7F;
+    background-color: transparent;
+    display: block;
+    margin: 1%;
+}
+
+.shell-input {
+    width: 60%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    margin: 1%;
+    display: block;
+}
+
+#shell-input:focus {
+    caret-color: #00FF7F;
+}
+
+#shell-input:-webkit-autofill, 
+#shell-input:-webkit-autofill:hover, 
+#shell-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.typewriter {
+  display: inline-block;
+  overflow: hidden;               /* oculta el texto que aún no “aparece” */
+  /* border-right: 2px solid red;  el caret (cursor parpadeante) */
+  white-space: nowrap;            /* evita que el texto salte de línea */
+  animation: typing 3000ms steps(30) 1s forwards;
+  font-family: monospace;
+}
+
+@keyframes typing { 
+  from { width: 0; }
+  to { width: 100%; }
+}
