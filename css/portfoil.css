@@ -102,24 +102,45 @@ p {
     margin: 1%;
 }
 
-.palabra-destacada {
+.palabra-destacada{
     color: #c3005b;
     font-weight: bold;
     background-color: transparent;
+    text-decoration: none;
+}
+
+.enlace-destacado {
+    color: #0085c3;
+    font-weight: bold;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 .shell-input {
-    width: 60%;
+    width: 70%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #00FF7F;
+    outline: none;
+    color: #ffffff;
+    margin: 1%;
+    display: block;
+    /* animation: expandir-borde 1s forwards; */
+    animation: pulso 1.5s ease-in-out infinite;
+}
+
+.shell-input:focus {
+    caret-color: #00FF7F;
+}
+
+.shell-input-disabled {
+    /* width: 70%; */
     background-color: transparent;
     border: none;
     outline: none;
     color: #ffffff;
     margin: 1%;
     display: block;
-}
-
-#shell-input:focus {
-    caret-color: #00FF7F;
 }
 
 #shell-input:-webkit-autofill, 
@@ -133,7 +154,7 @@ p {
   display: inline-block;
   overflow: hidden;               /* oculta el texto que aún no “aparece” */
   /* border-right: 2px solid red;  el caret (cursor parpadeante) */
-  white-space: nowrap;            /* evita que el texto salte de línea */
+  white-space: nowrap;             /* evita que el texto salte de línea */
   animation: typing 3000ms steps(30) 1s forwards;
   font-family: monospace;
 }
@@ -141,4 +162,24 @@ p {
 @keyframes typing { 
   from { width: 0; }
   to { width: 100%; }
+}
+
+@keyframes expandir-borde {
+    from {
+        width: 0%;
+        border-bottom: 1px solid transparent;
+    }
+    to {
+        width: 70%;
+        border-bottom: 1px solid #00FF7F;
+    }
+}
+
+@keyframes pulso {
+  0%, 100% {
+    border-bottom-color: rgb(0, 23, 0);
+  }
+  50% {
+    border-bottom-color: rgb(0, 252, 4);
+  }
 }
